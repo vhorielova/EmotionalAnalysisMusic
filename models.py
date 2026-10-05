@@ -3,18 +3,12 @@ from sklearn.pipeline import Pipeline
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier, HistGradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.dummy import DummyClassifier
 
 from config import RANDOM_STATE
 
 
 def build_models():
     models = {
-        "Baseline (always most frequent class)": (
-            Pipeline([("scaler", StandardScaler()),
-                      ("clf", DummyClassifier(strategy="most_frequent"))]),
-            {}
-        ),
         "Logistic regression": (
             Pipeline([("scaler", StandardScaler()),
                       ("clf", LogisticRegression(max_iter=3000, class_weight="balanced"))]),

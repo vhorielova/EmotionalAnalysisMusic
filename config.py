@@ -1,7 +1,7 @@
-THRESHOLD = 5.0
+THRESHOLD = None
 NEUTRAL_MARGIN = 0.3
 RANDOM_STATE = 42
 TEST_SIZE = 0.2
 CV_FOLDS = 5
 
-EMOTION_NAMES = ["sad/low energy", "angry/tense", "calm/relaxed", "happy/excited"]
+EMOTION_NAMES = ["sad/low energy", "angry/tense", "calm/relaxed", "c"]
