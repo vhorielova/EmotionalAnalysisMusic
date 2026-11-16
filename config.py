@@ -2,6 +2,30 @@ THRESHOLD = None
 NEUTRAL_MARGIN = 0.3
 RANDOM_STATE = 42
 TEST_SIZE = 0.2
+VAL_SIZE = 0.15
 CV_FOLDS = 5
 
-EMOTION_NAMES = ["sad/low energy", "angry/tense", "calm/relaxed", "c"]
+EMOTION_NAMES = ["sad/low energy", "angry/tense", "calm/relaxed", "happy/excited "]
+
+SR = 22050
+N_FFT = 2048
+HOP_LENGTH = 512
+N_MELS = 128
+FMAX = 8000
+SPECTROGRAMS_DIR = "spectrograms"
+SEGMENT_FRAMES_CNN = 215 #5 sec
+
+MAX_SEGMENTS_PER_SONG = 9
+
+MAX_EPOCHS_CNN = 40
+LEARNING_RATE_CNN = 1e-4
+
+INF = 1e9
+
+SAMPLE_RATE = 16000
+SEGMENT_SAMPLES = SAMPLE_RATE*10 #10 sec
+MAX_SEGMENTS_AST = 4
+LEARNING_RATE_AST = 1e-5
+
+WAVEFORMS_DIR = "waveforms"
+MAX_EPOCHS_AST = 4
