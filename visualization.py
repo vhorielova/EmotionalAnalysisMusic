@@ -20,3 +20,38 @@ def plot_confusion_matrices(pred_emotion, y_test, model_names):
             y_test, pred_emotion[name], display_labels=EMOTION_NAMES, normalize="true"
         )
         disp.ax_.set_title(name)
+
+def plot_results_table(results_df, title):
+
+    display_df = results_df.copy()
+
+    for column in ["Accuracy", "Precision", "Recall", "F1-Score"]:
+        display_df[column] = display_df[column].map(
+            lambda x: f"{x:.3f}"
+        )
+
+    fig, ax = plt.subplots(
+        figsize=(12, 3.5)
+    )
+
+    ax.axis("off")
+
+    table = ax.table(
+        cellText=display_df.values,
+        colLabels=display_df.columns,
+        loc="center",
+        cellLoc="center"
+    )
+
+    table.auto_set_font_size(False)
+    table.set_fontsize(10)
+    table.scale(1, 2)
+
+    ax.set_title(
+        title,
+        fontsize=14,
+        pad=20
+    )
+
+    plt.tight_layout()
+    plt.show()
